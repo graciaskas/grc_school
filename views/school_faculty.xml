@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+        <record id="faculty_form_view" model="ir.ui.view">
+            <field name="name">school.faculty.form</field>
+            <field name="model">school.faculty</field>
+            <field name="arch" type="xml">
+                <form string="Faculty">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Faculty name" id="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+
+                            </group>
+                            <group>
+
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="faculty_tree_view" model="ir.ui.view">
+            <field name="name">school.faculty.tree</field>
+            <field name="model">school.faculty</field>
+            <field name="arch" type="xml">
+                <tree string="Faculties">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="faculty_search_view" model="ir.ui.view">
+            <field name="name">school.faculty.search</field>
+            <field name="model">school.faculty</field>
+            <field name="arch" type="xml">
+                <search string="Faculty">
+                    <group expand="1" string="Group By">
+                        <filter string="Group by" name="name" domain="[]"
+                                context="{'group_by':'name'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_faculties" model="ir.actions.act_window">
+            <field name="name">Faculty</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">school.faculty</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Faculty.
+                </p>
+            </field>
+        </record>
+
+
+
+</odoo>
